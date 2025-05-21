@@ -39,7 +39,9 @@ class Juego:
 
         for i in casos_ganadores:
             if len(list(filter(lambda x:x == jugador,i))) == 3:
-                print(f"--- Ganador: {jugador} ---")
+                self.imprimir_tablero()
+
+                print(f"----- Ganador: {jugador} ------")
                 return True
         return False
 
@@ -63,6 +65,7 @@ class Juego:
                 count+=1
                 ganador = self.revisar_ganador(self.jugador2)
         if ganador == False:
+            self.imprimir_tablero()
             print("Empate!")
 
 if __name__ == "__main__":
