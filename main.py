@@ -18,13 +18,13 @@ class Juego:
     def tirar(self, jugador, fila, columna):
         while fila >2 or fila <0 or columna > 2 or columna < 0:
             print("Intentalo de nuevo! fila: 1-3, columna: 1-3")
-            fila = int(input("Fila: "))
-            columna = int(input("Columna: "))
+            fila = int(input("Fila: "))-1
+            columna = int(input("Columna: "))-1
 
         while self.tablero[fila][columna] == "X" or self.tablero[fila][columna] == "O":
             print("Intentalo de nuevo! Casilla ya ocupada!")
-            fila = int(input("Fila: "))
-            columna = int(input("Columna: "))
+            fila = int(input("Fila: "))-1
+            columna = int(input("Columna: "))-1
 
         self.tablero[fila][columna] = jugador
 
