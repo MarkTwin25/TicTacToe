@@ -17,7 +17,7 @@ class Juego:
 
     def tirar(self, jugador, fila, columna):
         while fila >2 or fila <0 or columna > 2 or columna < 0:
-            print("Intentalo de nuevo! fila: 0-3, columna: 0-3")
+            print("Intentalo de nuevo! fila: 1-3, columna: 1-3")
             fila = int(input("Fila: "))
             columna = int(input("Columna: "))
 
@@ -51,7 +51,7 @@ class Juego:
             print("Jugador 1: ")
             fila = int(input("Fila: "))
             columna = int(input("Columna: "))
-            self.tirar(self.jugador1, fila, columna)
+            self.tirar(self.jugador1, fila-1, columna-1)
             count+=1
             ganador = self.revisar_ganador(self.jugador1)
             if ganador == False and count <=8:
@@ -59,7 +59,7 @@ class Juego:
                 print("Jugador 2: ")
                 fila = int(input("Fila: "))
                 columna = int(input("Columna: "))
-                self.tirar(self.jugador2,fila,columna)
+                self.tirar(self.jugador2,fila-1,columna-1)
                 count+=1
                 ganador = self.revisar_ganador(self.jugador2)
         if ganador == False:
